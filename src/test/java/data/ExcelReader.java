@@ -13,7 +13,7 @@ public class ExcelReader {
 	static FileInputStream fis = null;
 	
 	public FileInputStream getFileInputStream() {
-		String filePath = System.getProperty("user.dir")+"/src/test/java/data/Book.xlsx";
+		String filePath = System.getProperty("user.dir")+"/src/test/java/data/SeleniumTutorial.xlsx";
 		File srcFile = new File(filePath);
 		try {
 			fis = new FileInputStream(srcFile);
@@ -29,7 +29,7 @@ public class ExcelReader {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet = wb.getSheetAt(0);
 		int totalNumberOfRows = sheet.getLastRowNum()+1;
-		int totalNumberOfCols = 4;
+		int totalNumberOfCols = 1;
 		
 		String[][] arrayExcelData = new String[totalNumberOfRows][totalNumberOfCols];
 		for (int i = 0; i < totalNumberOfRows; i++) {
